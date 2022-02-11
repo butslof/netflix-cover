@@ -1,4 +1,5 @@
 import React  from "react";
+import LimitCaracter from "./functions/LimitCaracter";
 import './FeaturedMovie.css'
 
 
@@ -26,7 +27,7 @@ export default props => {
                             {props.item.number_of_seasons} temporada{props.item.number_of_seasons !== 1 && 's'}
                         </div>  
                         <div className="featured-description">
-                            {props.item.overview}
+                            {LimitCaracter(props.item.overview)}
                         </div> 
                         <div className="featured-buttons">
                             <a href={`/watch/${props.item.id}`} className="light-button" >&#9658; Assistir</a>
