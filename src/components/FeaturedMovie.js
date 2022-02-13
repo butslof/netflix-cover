@@ -1,5 +1,7 @@
 import React  from "react";
 import LimitCaracter from "./functions/LimitCaracter";
+import { Link } from "react-router-dom";
+
 import './FeaturedMovie.css'
 
 
@@ -30,8 +32,8 @@ export default props => {
                             {LimitCaracter(props.item.overview)}
                         </div> 
                         <div className="featured-buttons">
-                            <a href={`/watch/${props.item.id}`} className="light-button" >&#9658; Assistir</a>
-                            <a href={`/list/add/${props.item.id}`} className="my-list-button">+ Minha Lista</a>
+                            <Link to={`/watch/tv/${props.item.id}`} className="light-button" >&#9658; Assistir</Link>
+                            <Link to={`/list/add/${props.item.id}`} className="my-list-button">+ Minha Lista</Link>
 
                         </div> 
                         <div className="featured-description">

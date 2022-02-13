@@ -2,8 +2,10 @@ import React, {useState} from "react";
 import './MovieRows.css';
 import NavigateBeforeIcon  from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon  from '@material-ui/icons/NavigateNext';
+import { Link } from "react-router-dom";
 
 export default props =>{
+
 
     const [scrollX, setScrollX] = useState(-400);
 
@@ -49,12 +51,12 @@ export default props =>{
                     {
                         
                         props.items.results.length > 0  && props.items.results.map((item, key) => (
-
-                            <div key={key} className="movieRow--item">
-                                {/* <h3>{item.title}</h3> */}
-                                <img src={`https://image.tmdb.org/t/p/w200/${item.poster_path}`} alt={item.original_title}/> 
-                            </div>
-
+                            <Link to={`/watch/${item.media_type}/${item.id}`}>
+                                <div key={key} className="movieRow--item">
+                                    {/* <h3>{item.title}</h3> */}
+                                    <img src={`https://image.tmdb.org/t/p/w200/${item.poster_path}`} alt={item.original_title}/> 
+                                </div>
+                            </Link>
                         ))
                     
                     }

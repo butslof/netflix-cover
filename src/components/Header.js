@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import {Link} from 'react-router-dom'; 
 import './Header.css'
 
 
@@ -30,14 +31,14 @@ export default props => {
     return(
         <header className={headerBlack}>
             <div className="header-logo">
-                <a href="/">
+                <Link to="/">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/170px-Netflix_2015_logo.svg.png"/>
-                </a>
+                </Link>
             </div>
             <div className="header-user">
-                <a href="#">
+                <Link to="/">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" />
-                </a>
+                </Link>
             </div>
         </header>
     );
